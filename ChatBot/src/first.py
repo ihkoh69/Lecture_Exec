@@ -25,8 +25,10 @@ response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
         {"role": "system", "content": "너는 아주 친절하고 똑똑한 비서야"},
-        {"role": "user", "content": "서울시 관악구 구로구의 오늘 날씨는 어때? 혹시 소나기가 올 확률이 있나?"}
-    ]
+        {"role": "user", "content": "내게 3개 단락 분량으로 자기소개를 해줘. 소개는 전부 한국어로 진행해 줘"}
+        
+    ],
+    temperature=2
 )
 
 print(response.choices[0].message.content)
