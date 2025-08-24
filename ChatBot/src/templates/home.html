@@ -1,0 +1,28 @@
+{% include 'layout.html' %}
+
+<div class="container mt-5">
+    <h3>
+        챗봇에게 묻고 싶은 내용을 입력
+    </h3>
+    <form action="/" method="POST">
+        <div>
+            <textarea class="form-control" placeholder="여기에 질문을 입력하세요" name="user_input" rows="3"> </textarea>
+            <button class="btn btn-primary mt-1" type="submit">전송</button>
+        </div>
+    </form>
+    <div>
+        <div class="card text-center mt-3">
+            <div class="card-header">
+                Chat History
+            </div>
+            <div class="card-body">
+                {% for response in chat_responses %}
+                <div>
+                    - {{response}}
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
